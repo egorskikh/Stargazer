@@ -60,7 +60,6 @@
 		7BAD88BD2624565300F900CD /* App */ = {
 			isa = PBXGroup;
 			children = (
-				7BAD88BE2624565C00F900CD /* TabBarRouter */,
 				7BAD88C12624569A00F900CD /* Supporting Files */,
 				7BAD88C02624567800F900CD /* Storyboards */,
 				7BAD88BF2624566B00F900CD /* App Delegates */,
@@ -72,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				7BAD88C4262457DC00F900CD /* Controller */,
-				7BAD88C2262456E500F900CD /* Models */,
+				7BAD88C2262456E500F900CD /* Model */,
 			);
 			path = TabBarRouter;
 			sourceTree = "<group>";
@@ -105,12 +104,12 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		7BAD88C2262456E500F900CD /* Models */ = {
+		7BAD88C2262456E500F900CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				7BAD88C52624582600F900CD /* TabBarTitle.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7BAD88C4262457DC00F900CD /* Controller */ = {
@@ -177,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				7BAD88BD2624565300F900CD /* App */,
+				7BAD88BE2624565C00F900CD /* TabBarRouter */,
 				7BAD88D626245F3000F900CD /* APODModule */,
 				7BAD88D726245F4900F900CD /* NeoWsModule */,
 				7BAD88D826245F6000F900CD /* MarsRoverPhotosModule */,
