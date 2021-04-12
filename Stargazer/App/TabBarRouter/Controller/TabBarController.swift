@@ -16,7 +16,7 @@ class TabBarController: UITabBarController {
     }
     
     func setupTabBar() {
-        let apodVC = ApodVC()
+        let apodVC = ApodPresenter()
         let neoWsVC = NeoWsVC()
         let marsRoverPhotosVC = MarsRoverPhotosVC()
         let inSightVC = InSightVC()

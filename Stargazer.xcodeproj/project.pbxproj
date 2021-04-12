@@ -12,9 +12,13 @@
 		7BAD88CE262459FB00F900CD /* NeoWsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88CD262459FB00F900CD /* NeoWsVC.swift */; };
 		7BAD88D126245A4700F900CD /* MarsRoverPhotosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88D026245A4700F900CD /* MarsRoverPhotosVC.swift */; };
 		7BAD88D426245A6F00F900CD /* InSightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88D326245A6F00F900CD /* InSightVC.swift */; };
+		7BAD88DF26246B8900F900CD /* ApodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88DE26246B8900F900CD /* ApodView.swift */; };
+		7BAD88E226246BD700F900CD /* ApodNetworkingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88E126246BD700F900CD /* ApodNetworkingInteractor.swift */; };
+		7BAD88E526246C0500F900CD /* ApodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88E426246C0500F900CD /* ApodEntity.swift */; };
+		7BAD88EC26246D9600F900CD /* ApodNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88EB26246D9600F900CD /* ApodNetworkService.swift */; };
 		7BD70C0C2623852E00CD8AF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0B2623852E00CD8AF3 /* AppDelegate.swift */; };
 		7BD70C0E2623852E00CD8AF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0D2623852E00CD8AF3 /* SceneDelegate.swift */; };
-		7BD70C102623852E00CD8AF3 /* ApodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0F2623852E00CD8AF3 /* ApodVC.swift */; };
+		7BD70C102623852E00CD8AF3 /* ApodPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0F2623852E00CD8AF3 /* ApodPresenter.swift */; };
 		7BD70C132623852E00CD8AF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BD70C112623852E00CD8AF3 /* Main.storyboard */; };
 		7BD70C162623852E00CD8AF3 /* Stargazer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C142623852E00CD8AF3 /* Stargazer.xcdatamodeld */; };
 		7BD70C182623853300CD8AF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BD70C172623853300CD8AF3 /* Assets.xcassets */; };
@@ -27,10 +31,14 @@
 		7BAD88CD262459FB00F900CD /* NeoWsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoWsVC.swift; sourceTree = "<group>"; };
 		7BAD88D026245A4700F900CD /* MarsRoverPhotosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarsRoverPhotosVC.swift; sourceTree = "<group>"; };
 		7BAD88D326245A6F00F900CD /* InSightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSightVC.swift; sourceTree = "<group>"; };
+		7BAD88DE26246B8900F900CD /* ApodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodView.swift; sourceTree = "<group>"; };
+		7BAD88E126246BD700F900CD /* ApodNetworkingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodNetworkingInteractor.swift; sourceTree = "<group>"; };
+		7BAD88E426246C0500F900CD /* ApodEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodEntity.swift; sourceTree = "<group>"; };
+		7BAD88EB26246D9600F900CD /* ApodNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodNetworkService.swift; sourceTree = "<group>"; };
 		7BD70C082623852E00CD8AF3 /* Stargazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stargazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD70C0B2623852E00CD8AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BD70C0D2623852E00CD8AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7BD70C0F2623852E00CD8AF3 /* ApodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodVC.swift; sourceTree = "<group>"; };
+		7BD70C0F2623852E00CD8AF3 /* ApodPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodPresenter.swift; sourceTree = "<group>"; };
 		7BD70C122623852E00CD8AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BD70C152623852E00CD8AF3 /* Stargazer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stargazer.xcdatamodel; sourceTree = "<group>"; };
 		7BD70C172623853300CD8AF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,7 +60,7 @@
 		7BAD88BD2624565300F900CD /* App */ = {
 			isa = PBXGroup;
 			children = (
-				7BAD88BE2624565C00F900CD /* Tab bar */,
+				7BAD88BE2624565C00F900CD /* TabBarRouter */,
 				7BAD88C12624569A00F900CD /* Supporting Files */,
 				7BAD88C02624567800F900CD /* Storyboards */,
 				7BAD88BF2624566B00F900CD /* App Delegates */,
@@ -60,13 +68,13 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		7BAD88BE2624565C00F900CD /* Tab bar */ = {
+		7BAD88BE2624565C00F900CD /* TabBarRouter */ = {
 			isa = PBXGroup;
 			children = (
 				7BAD88C4262457DC00F900CD /* Controller */,
 				7BAD88C2262456E500F900CD /* Models */,
 			);
-			path = "Tab bar";
+			path = TabBarRouter;
 			sourceTree = "<group>";
 		};
 		7BAD88BF2624566B00F900CD /* App Delegates */ = {
@@ -113,6 +121,42 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		7BAD88D626245F3000F900CD /* APODModule */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD88DE26246B8900F900CD /* ApodView.swift */,
+				7BAD88EB26246D9600F900CD /* ApodNetworkService.swift */,
+				7BAD88E126246BD700F900CD /* ApodNetworkingInteractor.swift */,
+				7BD70C0F2623852E00CD8AF3 /* ApodPresenter.swift */,
+				7BAD88E426246C0500F900CD /* ApodEntity.swift */,
+			);
+			path = APODModule;
+			sourceTree = "<group>";
+		};
+		7BAD88D726245F4900F900CD /* NeoWsModule */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD88CD262459FB00F900CD /* NeoWsVC.swift */,
+			);
+			path = NeoWsModule;
+			sourceTree = "<group>";
+		};
+		7BAD88D826245F6000F900CD /* MarsRoverPhotosModule */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD88D026245A4700F900CD /* MarsRoverPhotosVC.swift */,
+			);
+			path = MarsRoverPhotosModule;
+			sourceTree = "<group>";
+		};
+		7BAD88D926245F7500F900CD /* InSightModule */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD88D326245A6F00F900CD /* InSightVC.swift */,
+			);
+			path = InSightModule;
+			sourceTree = "<group>";
+		};
 		7BD70BFF2623852E00CD8AF3 = {
 			isa = PBXGroup;
 			children = (
@@ -133,10 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				7BAD88BD2624565300F900CD /* App */,
-				7BD70C0F2623852E00CD8AF3 /* ApodVC.swift */,
-				7BAD88CD262459FB00F900CD /* NeoWsVC.swift */,
-				7BAD88D026245A4700F900CD /* MarsRoverPhotosVC.swift */,
-				7BAD88D326245A6F00F900CD /* InSightVC.swift */,
+				7BAD88D626245F3000F900CD /* APODModule */,
+				7BAD88D726245F4900F900CD /* NeoWsModule */,
+				7BAD88D826245F6000F900CD /* MarsRoverPhotosModule */,
+				7BAD88D926245F7500F900CD /* InSightModule */,
 			);
 			path = Stargazer;
 			sourceTree = "<group>";
@@ -211,15 +255,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BAD88E526246C0500F900CD /* ApodEntity.swift in Sources */,
 				7BAD88D426245A6F00F900CD /* InSightVC.swift in Sources */,
 				7BAD88CE262459FB00F900CD /* NeoWsVC.swift in Sources */,
+				7BAD88EC26246D9600F900CD /* ApodNetworkService.swift in Sources */,
+				7BAD88DF26246B8900F900CD /* ApodView.swift in Sources */,
 				7BAD88D126245A4700F900CD /* MarsRoverPhotosVC.swift in Sources */,
-				7BD70C102623852E00CD8AF3 /* ApodVC.swift in Sources */,
+				7BD70C102623852E00CD8AF3 /* ApodPresenter.swift in Sources */,
 				7BD70C162623852E00CD8AF3 /* Stargazer.xcdatamodeld in Sources */,
 				7BAD88C62624582600F900CD /* TabBarTitle.swift in Sources */,
 				7BAD88CA2624598500F900CD /* TabBarController.swift in Sources */,
 				7BD70C0C2623852E00CD8AF3 /* AppDelegate.swift in Sources */,
 				7BD70C0E2623852E00CD8AF3 /* SceneDelegate.swift in Sources */,
+				7BAD88E226246BD700F900CD /* ApodNetworkingInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

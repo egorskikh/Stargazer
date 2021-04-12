@@ -12,5 +12,4 @@ enum TabBarTitle: String {
     case neoWs = "NeoWs"
     case marsRoverPhotos = "Mars Photos"
     case inSight = "InSight"
-    
 }
