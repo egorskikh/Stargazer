@@ -1,20 +1,20 @@
 //
-//  ViewController.swift
+//  ApodView.swift
 //  Stargazer
 //
-//  Created by Егор Горских on 11.04.2021.
+//  Created by Егор Горских on 12.04.2021.
 //
 
-import UIKit
+import Foundation
 
-class ApodPresenter: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .yellow
-    }
-
-
+class ApodPresenter {
+    
 }
 
+extension ApodPresenter: ApodViewInput, ApodViewOutput {
+    
+}
+
+extension ApodPresenter: ApodInteractorInput, ApodInteractorOutput {
+    
+}
