@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol ApodRouterInput {
-    
-}
-
 class ApodRouter {
     
 }

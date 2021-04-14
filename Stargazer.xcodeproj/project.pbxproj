@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B292B89262676200096D0A3 /* ApodProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B292B88262676200096D0A3 /* ApodProtocol.swift */; };
 		7BAD88C62624582600F900CD /* TabBarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88C52624582600F900CD /* TabBarTitle.swift */; };
 		7BAD88CA2624598500F900CD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88C92624598500F900CD /* TabBarController.swift */; };
 		7BAD88CE262459FB00F900CD /* NeoWsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88CD262459FB00F900CD /* NeoWsVC.swift */; };
@@ -20,7 +21,7 @@
 		7BC769042625BCB10072B402 /* ApodDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC769032625BCB10072B402 /* ApodDataFetch.swift */; };
 		7BD70C0C2623852E00CD8AF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0B2623852E00CD8AF3 /* AppDelegate.swift */; };
 		7BD70C0E2623852E00CD8AF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0D2623852E00CD8AF3 /* SceneDelegate.swift */; };
-		7BD70C102623852E00CD8AF3 /* ApodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0F2623852E00CD8AF3 /* ApodView.swift */; };
+		7BD70C102623852E00CD8AF3 /* ApodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0F2623852E00CD8AF3 /* ApodViewController.swift */; };
 		7BD70C132623852E00CD8AF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BD70C112623852E00CD8AF3 /* Main.storyboard */; };
 		7BD70C162623852E00CD8AF3 /* Stargazer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C142623852E00CD8AF3 /* Stargazer.xcdatamodeld */; };
 		7BD70C182623853300CD8AF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BD70C172623853300CD8AF3 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B292B88262676200096D0A3 /* ApodProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodProtocol.swift; sourceTree = "<group>"; };
 		7BAD88C52624582600F900CD /* TabBarTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTitle.swift; sourceTree = "<group>"; };
 		7BAD88C92624598500F900CD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7BAD88CD262459FB00F900CD /* NeoWsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoWsVC.swift; sourceTree = "<group>"; };
@@ -42,7 +44,7 @@
 		7BD70C082623852E00CD8AF3 /* Stargazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stargazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD70C0B2623852E00CD8AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BD70C0D2623852E00CD8AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7BD70C0F2623852E00CD8AF3 /* ApodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodView.swift; sourceTree = "<group>"; };
+		7BD70C0F2623852E00CD8AF3 /* ApodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewController.swift; sourceTree = "<group>"; };
 		7BD70C122623852E00CD8AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BD70C152623852E00CD8AF3 /* Stargazer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stargazer.xcdatamodel; sourceTree = "<group>"; };
 		7BD70C172623853300CD8AF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B292B85262675D50096D0A3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD88EB26246D9600F900CD /* ApodNetworkService.swift */,
+				7BC769032625BCB10072B402 /* ApodDataFetch.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		7BAD88BD2624565300F900CD /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,13 +138,13 @@
 		7BAD88D626245F3000F900CD /* APODModule */ = {
 			isa = PBXGroup;
 			children = (
-				7BC768FF2625B1FC0072B402 /* ApodRouter.swift */,
-				7BD70C0F2623852E00CD8AF3 /* ApodView.swift */,
-				7BAD88EB26246D9600F900CD /* ApodNetworkService.swift */,
-				7BC769032625BCB10072B402 /* ApodDataFetch.swift */,
+				7B292B85262675D50096D0A3 /* Network */,
+				7B292B88262676200096D0A3 /* ApodProtocol.swift */,
+				7BD70C0F2623852E00CD8AF3 /* ApodViewController.swift */,
 				7BAD88E126246BD700F900CD /* ApodInteractor.swift */,
 				7BAD88DE26246B8900F900CD /* ApodPresenter.swift */,
 				7BAD88E426246C0500F900CD /* ApodEntity.swift */,
+				7BC768FF2625B1FC0072B402 /* ApodRouter.swift */,
 			);
 			path = APODModule;
 			sourceTree = "<group>";
@@ -264,11 +275,12 @@
 				7BAD88E526246C0500F900CD /* ApodEntity.swift in Sources */,
 				7BAD88D426245A6F00F900CD /* InSightVC.swift in Sources */,
 				7BAD88CE262459FB00F900CD /* NeoWsVC.swift in Sources */,
+				7B292B89262676200096D0A3 /* ApodProtocol.swift in Sources */,
 				7BAD88EC26246D9600F900CD /* ApodNetworkService.swift in Sources */,
 				7BC769002625B1FC0072B402 /* ApodRouter.swift in Sources */,
 				7BAD88DF26246B8900F900CD /* ApodPresenter.swift in Sources */,
 				7BAD88D126245A4700F900CD /* MarsRoverPhotosVC.swift in Sources */,
-				7BD70C102623852E00CD8AF3 /* ApodView.swift in Sources */,
+				7BD70C102623852E00CD8AF3 /* ApodViewController.swift in Sources */,
 				7BC769042625BCB10072B402 /* ApodDataFetch.swift in Sources */,
 				7BD70C162623852E00CD8AF3 /* Stargazer.xcdatamodeld in Sources */,
 				7BAD88C62624582600F900CD /* TabBarTitle.swift in Sources */,

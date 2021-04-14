@@ -7,7 +7,9 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
+    
+    // Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,8 +17,8 @@ class TabBarController: UITabBarController {
         setupTabBar()
     }
     
-    func setupTabBar() {
-        let apodVC = ApodView()
+    private func setupTabBar() {
+        let apodVC = ApodViewController()
         let neoWsVC = NeoWsVC()
         let marsRoverPhotosVC = MarsRoverPhotosVC()
         let inSightVC = InSightVC()
@@ -32,7 +34,7 @@ class TabBarController: UITabBarController {
     
 }
 
-extension TabBarController {
+private extension TabBarController {
     
     static func generateNavigationController(rootVC: UIViewController,
                                              title: String,

@@ -7,22 +7,14 @@
 
 import UIKit
 
-// for Router
-protocol ViewType {
-    
-}
-// for Presenter
-protocol ApodViewInput {
-    
-}
-protocol ApodViewOutput {
-    
-}
-
-
-class ApodView: UIViewController {
+class ApodViewController: UIViewController {
     
     // MARK: - Properties
+    static var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
     
     static var titleLbl: UILabel = {
         var label = UILabel()
@@ -64,45 +56,50 @@ class ApodView: UIViewController {
         return textView
     }()
     
+    static var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    
+    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setuoScrollView()
         setupConstraint()
         view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         navigationController?.isNavigationBarHidden = true
     }
     
+    // MARK: - Setup ScrollView
+    
+    func setuoScrollView() {
+        
+    }
+    
+    
+    
+    
     // MARK: - Setup Constraint
     
     func setupConstraint() {
-        view.addSubview(ApodView.titleLbl)
-        view.addSubview(ApodView.dataLbl)
-        view.addSubview(ApodView.copyrightLbl)
-      //  view.addSubview(ApodView.apodImgVw)
-      //  view.addSubview(ApodView.descriptionTxtVw)
+       // view.addSubview(ApodView.titleLbl)
+        
         
         NSLayoutConstraint.activate([
-            // Will later be a stack
-            ApodView.titleLbl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            ApodView.titleLbl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
-            ApodView.titleLbl.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5),
-            
-            ApodView.dataLbl.topAnchor.constraint(equalTo: ApodView.titleLbl.bottomAnchor, constant: 10),
-            ApodView.dataLbl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
-            ApodView.dataLbl.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5),
-            
-            ApodView.copyrightLbl.topAnchor.constraint(equalTo: ApodView.dataLbl.bottomAnchor, constant: 10),
-            ApodView.copyrightLbl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 5),
-            ApodView.copyrightLbl.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -5),
-            // Will later be a stack
+  
             
         ])
     }
     
 }
 
-extension ApodView: ApodViewInput, ApodViewOutput, ApodRouterInput {
+extension ApodViewController: ApodViewInput, ApodViewOutput, ApodRouterInput {
     
 }

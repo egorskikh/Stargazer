@@ -7,14 +7,6 @@
 
 import Foundation
 
-// for Presenter
-protocol ApodInteractorInput {
-
-}
-protocol ApodInteractorOutput {
-    
-}
-
 class ApodInteractor {
     
 }
