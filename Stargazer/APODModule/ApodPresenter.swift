@@ -9,12 +9,9 @@ import Foundation
 
 class ApodPresenter {
     
+
 }
 
-extension ApodPresenter: ApodViewInput, ApodViewOutput {
-    
-}
 
-extension ApodPresenter: ApodInteractorInput, ApodInteractorOutput {
-    
-}
+
+

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B292B89262676200096D0A3 /* ApodProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B292B88262676200096D0A3 /* ApodProtocol.swift */; };
+		7B292B89262676200096D0A3 /* ApodContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B292B88262676200096D0A3 /* ApodContract.swift */; };
 		7BAD88C62624582600F900CD /* TabBarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88C52624582600F900CD /* TabBarTitle.swift */; };
 		7BAD88CA2624598500F900CD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88C92624598500F900CD /* TabBarController.swift */; };
 		7BAD88CE262459FB00F900CD /* NeoWsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88CD262459FB00F900CD /* NeoWsVC.swift */; };
@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7B292B88262676200096D0A3 /* ApodProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodProtocol.swift; sourceTree = "<group>"; };
+		7B292B88262676200096D0A3 /* ApodContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodContract.swift; sourceTree = "<group>"; };
 		7BAD88C52624582600F900CD /* TabBarTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTitle.swift; sourceTree = "<group>"; };
 		7BAD88C92624598500F900CD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7BAD88CD262459FB00F900CD /* NeoWsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoWsVC.swift; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		7BAD88BD2624565300F900CD /* App */ = {
 			isa = PBXGroup;
 			children = (
-				7BAD88C12624569A00F900CD /* Supporting Files */,
+				7BAD88C12624569A00F900CD /* Resources */,
 				7BAD88C02624567800F900CD /* Storyboards */,
 				7BAD88BF2624566B00F900CD /* App Delegates */,
 			);
@@ -109,14 +109,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		7BAD88C12624569A00F900CD /* Supporting Files */ = {
+		7BAD88C12624569A00F900CD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				7BD70C172623853300CD8AF3 /* Assets.xcassets */,
 				7BD70C1C2623853300CD8AF3 /* Info.plist */,
 				7BD70C142623852E00CD8AF3 /* Stargazer.xcdatamodeld */,
 			);
-			path = "Supporting Files";
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7BAD88C2262456E500F900CD /* Model */ = {
@@ -139,10 +139,10 @@
 			isa = PBXGroup;
 			children = (
 				7B292B85262675D50096D0A3 /* Network */,
-				7B292B88262676200096D0A3 /* ApodProtocol.swift */,
+				7B292B88262676200096D0A3 /* ApodContract.swift */,
 				7BD70C0F2623852E00CD8AF3 /* ApodViewController.swift */,
-				7BAD88E126246BD700F900CD /* ApodInteractor.swift */,
 				7BAD88DE26246B8900F900CD /* ApodPresenter.swift */,
+				7BAD88E126246BD700F900CD /* ApodInteractor.swift */,
 				7BAD88E426246C0500F900CD /* ApodEntity.swift */,
 				7BC768FF2625B1FC0072B402 /* ApodRouter.swift */,
 			);
@@ -275,7 +275,7 @@
 				7BAD88E526246C0500F900CD /* ApodEntity.swift in Sources */,
 				7BAD88D426245A6F00F900CD /* InSightVC.swift in Sources */,
 				7BAD88CE262459FB00F900CD /* NeoWsVC.swift in Sources */,
-				7B292B89262676200096D0A3 /* ApodProtocol.swift in Sources */,
+				7B292B89262676200096D0A3 /* ApodContract.swift in Sources */,
 				7BAD88EC26246D9600F900CD /* ApodNetworkService.swift in Sources */,
 				7BC769002625B1FC0072B402 /* ApodRouter.swift in Sources */,
 				7BAD88DF26246B8900F900CD /* ApodPresenter.swift in Sources */,
@@ -436,7 +436,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68FXT4UH73;
-				INFOPLIST_FILE = "Stargazer/App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = Stargazer/App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,7 +455,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68FXT4UH73;
-				INFOPLIST_FILE = "Stargazer/App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = Stargazer/App/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

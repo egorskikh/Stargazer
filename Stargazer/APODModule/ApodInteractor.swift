@@ -11,6 +11,3 @@ class ApodInteractor {
     
 }
 
-extension ApodInteractor: ApodInteractorInput {
-    
-}

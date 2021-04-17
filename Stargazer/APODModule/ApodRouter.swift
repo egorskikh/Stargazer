@@ -11,10 +11,6 @@ class ApodRouter {
     
 }
 
-extension ApodRouter: ApodRouterInput {
-    
-}
-
-extension ApodRouter: ViewType {
+extension ApodRouter {
     
 }

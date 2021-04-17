@@ -16,7 +16,7 @@ class ApodViewController: UIViewController {
         return scrollView
     }()
     
-     let stackView: UIStackView = {
+    let stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLbl,
                                                        copyrightLbl,
                                                        dataLbl,
@@ -25,11 +25,11 @@ class ApodViewController: UIViewController {
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.spacing = 15
+        stackView.spacing = 10
         return stackView
     }()
     
-    static var titleLbl: UILabel = {
+     static var titleLbl: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
@@ -75,12 +75,28 @@ class ApodViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupScrollView()
-        setupStackView()
+        setupView()
+        sutupAddSubview()
+        setupScrollViewConstraint()
+        setupStackViewConstraint()
         setupSizeUIConstraint()
-        view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        
+        
+    }
+    
+    // MARK: - Setup View
+    func setupView() {
+        self.view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         navigationController?.isNavigationBarHidden = true
     }
+    
+    // MARK: - Setup AddSub
+    
+    func sutupAddSubview() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(stackView)
+    }
+    
     
     // MARK: - Setup Size Constraint
     
@@ -93,38 +109,35 @@ class ApodViewController: UIViewController {
             ApodViewController.descriptionTxtVw.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
     }
-
-    // MARK: - Setup ScrollView
     
-    func setupStackView() {
-        scrollView.addSubview(stackView)
+    // MARK: - Setup Constraint scrollView, stackView
+    
+    func setupStackViewConstraint() {
         let contentLayoutGuide = scrollView.contentLayoutGuide
         
         NSLayoutConstraint.activate([
-        stackView.widthAnchor.constraint(equalTo: view.widthAnchor),
-        stackView.leadingAnchor.constraint(equalTo: contentLayoutGuide.leadingAnchor),
-        stackView.trailingAnchor.constraint(equalTo: contentLayoutGuide.trailingAnchor),
-        stackView.topAnchor.constraint(equalTo: contentLayoutGuide.topAnchor),
-        stackView.bottomAnchor.constraint(equalTo: contentLayoutGuide.bottomAnchor)
+            stackView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            stackView.leadingAnchor.constraint(equalTo: contentLayoutGuide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: contentLayoutGuide.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: contentLayoutGuide.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: contentLayoutGuide.bottomAnchor)
         ])
     }
     
-    func setupScrollView() {
-        view.addSubview(scrollView)
+    func setupScrollViewConstraint() {
         let frameLayoutGuide = scrollView.frameLayoutGuide
         
         NSLayoutConstraint.activate([
-          frameLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-          frameLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-          frameLayoutGuide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-          frameLayoutGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            frameLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            frameLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            frameLayoutGuide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            frameLayoutGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
     
     
     
 }
 
-extension ApodViewController: ApodViewInput, ApodViewOutput, ApodRouterInput {
-    
-}
+
