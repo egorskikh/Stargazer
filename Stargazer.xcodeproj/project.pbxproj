@@ -22,7 +22,7 @@
 		7BC769042625BCB10072B402 /* ApodDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC769032625BCB10072B402 /* ApodDataFetch.swift */; };
 		7BD70C0C2623852E00CD8AF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0B2623852E00CD8AF3 /* AppDelegate.swift */; };
 		7BD70C0E2623852E00CD8AF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0D2623852E00CD8AF3 /* SceneDelegate.swift */; };
-		7BD70C102623852E00CD8AF3 /* ApodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0F2623852E00CD8AF3 /* ApodViewController.swift */; };
+		7BD70C102623852E00CD8AF3 /* ApodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C0F2623852E00CD8AF3 /* ApodVC.swift */; };
 		7BD70C132623852E00CD8AF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BD70C112623852E00CD8AF3 /* Main.storyboard */; };
 		7BD70C162623852E00CD8AF3 /* Stargazer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BD70C142623852E00CD8AF3 /* Stargazer.xcdatamodeld */; };
 		7BD70C182623853300CD8AF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BD70C172623853300CD8AF3 /* Assets.xcassets */; };
@@ -46,7 +46,7 @@
 		7BD70C082623852E00CD8AF3 /* Stargazer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stargazer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BD70C0B2623852E00CD8AF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BD70C0D2623852E00CD8AF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7BD70C0F2623852E00CD8AF3 /* ApodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodViewController.swift; sourceTree = "<group>"; };
+		7BD70C0F2623852E00CD8AF3 /* ApodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodVC.swift; sourceTree = "<group>"; };
 		7BD70C122623852E00CD8AF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BD70C152623852E00CD8AF3 /* Stargazer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stargazer.xcdatamodel; sourceTree = "<group>"; };
 		7BD70C172623853300CD8AF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 			children = (
 				7B292B85262675D50096D0A3 /* Network */,
 				7B292B88262676200096D0A3 /* ApodContract.swift */,
-				7BD70C0F2623852E00CD8AF3 /* ApodViewController.swift */,
+				7BD70C0F2623852E00CD8AF3 /* ApodVC.swift */,
 				7BAD88DE26246B8900F900CD /* ApodPresenter.swift */,
 				7BAD88E126246BD700F900CD /* ApodInteractor.swift */,
 				7BAD88E426246C0500F900CD /* ApodEntity.swift */,
@@ -291,7 +291,7 @@
 				7BC769002625B1FC0072B402 /* ApodRouter.swift in Sources */,
 				7BAD88DF26246B8900F900CD /* ApodPresenter.swift in Sources */,
 				7BAD88D126245A4700F900CD /* MarsRoverPhotosVC.swift in Sources */,
-				7BD70C102623852E00CD8AF3 /* ApodViewController.swift in Sources */,
+				7BD70C102623852E00CD8AF3 /* ApodVC.swift in Sources */,
 				7BC769042625BCB10072B402 /* ApodDataFetch.swift in Sources */,
 				7BD70C162623852E00CD8AF3 /* Stargazer.xcdatamodeld in Sources */,
 				7B834B4826329900005BBF8C /* NSMutableAttributedStringExt.swift in Sources */,

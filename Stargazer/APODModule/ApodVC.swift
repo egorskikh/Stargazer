@@ -7,9 +7,10 @@
 
 import UIKit
 
-class ApodViewController: UIViewController {
+class ApodVC: UIViewController {
     
     // MARK: - Properties
+    
     lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -19,8 +20,8 @@ class ApodViewController: UIViewController {
     
     lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLbl,
-                                                       copyrightLbl,
                                                        dataLbl,
+                                                       copyrightLbl,
                                                        apodImgVw,
                                                        descriptionTxtVw])
         stackView.axis = .vertical
@@ -59,7 +60,7 @@ class ApodViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.attributedText =
             NSMutableAttributedString()
-                .bold("Copyright: Egor Gorskikh")
+                .underlined("Copyright: Egor Gorskikh")
         label.textColor = .white
         return label
     }()
@@ -77,12 +78,17 @@ class ApodViewController: UIViewController {
         textView.textAlignment = .center
         textView.font = UIFont.systemFont(ofSize: 17.0)
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = #colorLiteral(red: 0.3568627451, green: 0.1921568627, blue: 0.6078431373, alpha: 1)
+        textView.backgroundColor = #colorLiteral(red: 0.09019607843, green: 0.05098039216, blue: 0.1490196078, alpha: 1)
         textView.isScrollEnabled = false
         textView.textColor = .white
         textView.text = "Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow.Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow."
         
         return textView
+    }()
+    
+    lazy var urlVideoLbl: UILabel = {
+        let label = UILabel()
+        return label
     }()
     
     // MARK: - Life Cycle
