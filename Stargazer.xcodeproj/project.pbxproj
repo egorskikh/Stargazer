@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7B292B89262676200096D0A3 /* ApodContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B292B88262676200096D0A3 /* ApodContract.swift */; };
+		7B834B4826329900005BBF8C /* NSMutableAttributedStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B834B4726329900005BBF8C /* NSMutableAttributedStringExt.swift */; };
 		7BAD88C62624582600F900CD /* TabBarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88C52624582600F900CD /* TabBarTitle.swift */; };
 		7BAD88CA2624598500F900CD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88C92624598500F900CD /* TabBarController.swift */; };
 		7BAD88CE262459FB00F900CD /* NeoWsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88CD262459FB00F900CD /* NeoWsVC.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		7B292B88262676200096D0A3 /* ApodContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodContract.swift; sourceTree = "<group>"; };
+		7B834B4726329900005BBF8C /* NSMutableAttributedStringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExt.swift; sourceTree = "<group>"; };
 		7BAD88C52624582600F900CD /* TabBarTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTitle.swift; sourceTree = "<group>"; };
 		7BAD88C92624598500F900CD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7BAD88CD262459FB00F900CD /* NeoWsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoWsVC.swift; sourceTree = "<group>"; };
@@ -72,9 +74,18 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		7B834B46263298CB005BBF8C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7B834B4726329900005BBF8C /* NSMutableAttributedStringExt.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		7BAD88BD2624565300F900CD /* App */ = {
 			isa = PBXGroup;
 			children = (
+				7B834B46263298CB005BBF8C /* Extension */,
 				7BAD88C12624569A00F900CD /* Resources */,
 				7BAD88C02624567800F900CD /* Storyboards */,
 				7BAD88BF2624566B00F900CD /* App Delegates */,
@@ -283,6 +294,7 @@
 				7BD70C102623852E00CD8AF3 /* ApodViewController.swift in Sources */,
 				7BC769042625BCB10072B402 /* ApodDataFetch.swift in Sources */,
 				7BD70C162623852E00CD8AF3 /* Stargazer.xcdatamodeld in Sources */,
+				7B834B4826329900005BBF8C /* NSMutableAttributedStringExt.swift in Sources */,
 				7BAD88C62624582600F900CD /* TabBarTitle.swift in Sources */,
 				7BAD88CA2624598500F900CD /* TabBarController.swift in Sources */,
 				7BD70C0C2623852E00CD8AF3 /* AppDelegate.swift in Sources */,

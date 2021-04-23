@@ -10,13 +10,14 @@ import UIKit
 class ApodViewController: UIViewController {
     
     // MARK: - Properties
-    let scrollView: UIScrollView = {
+    lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
-    let stackView: UIStackView = {
+    lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLbl,
                                                        copyrightLbl,
                                                        dataLbl,
@@ -29,44 +30,58 @@ class ApodViewController: UIViewController {
         return stackView
     }()
     
-     static var titleLbl: UILabel = {
+    lazy var titleLbl: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.text = "Hello, an ordinary guy from the outskirts of Moscow."
+        label.textColor = .white
+        label.attributedText =
+            NSMutableAttributedString()
+                .bold("Hello, an ordinary guy from the outskirts of Moscow.")
         return label
     }()
     
-    static var dataLbl: UILabel = {
+    lazy var dataLbl: UILabel = {
         var label = UILabel()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "13.04.21"
+        label.textColor = .white
+        label.attributedText =
+            NSMutableAttributedString()
+                .bold("13.04.21")
         return label
     }()
     
-    static var copyrightLbl: UILabel = {
+    lazy var copyrightLbl: UILabel = {
         var label = UILabel()
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Copyright: Egor Gorskikh"
+        label.attributedText =
+            NSMutableAttributedString()
+                .bold("Copyright: Egor Gorskikh")
+        label.textColor = .white
         return label
     }()
     
-    static var apodImgVw: UIImageView = {
+    lazy var apodImgVw: UIImageView = {
         var imageView = UIImageView()
-        imageView.backgroundColor = .gray
+        imageView.backgroundColor = #colorLiteral(red: 0.3568627451, green: 0.1921568627, blue: 0.6078431373, alpha: 1)
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
-    static var descriptionTxtVw: UITextView = {
+    lazy var descriptionTxtVw: UITextView = {
         var textView = UITextView()
         textView.isEditable = false
         textView.textAlignment = .center
         textView.font = UIFont.systemFont(ofSize: 17.0)
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        textView.backgroundColor = #colorLiteral(red: 0.3568627451, green: 0.1921568627, blue: 0.6078431373, alpha: 1)
+        textView.isScrollEnabled = false
+        textView.textColor = .white
+        textView.text = "Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow.Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow. Hello, an ordinary guy from the outskirts of Moscow."
+        
         return textView
     }()
     
@@ -76,57 +91,63 @@ class ApodViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
+        configureNavigatorController()
         sutupAddSubview()
         setupScrollViewConstraint()
         setupStackViewConstraint()
         setupSizeUIConstraint()
-        
-        
     }
     
-    // MARK: - Setup View
-    func setupView() {
-        self.view.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-        navigationController?.isNavigationBarHidden = true
+    // MARK: - Setup View Element
+    
+    private func setupView() {
+        self.view.backgroundColor = #colorLiteral(red: 0.09019607843, green: 0.05098039216, blue: 0.1490196078, alpha: 1)
+    }
+    
+    private func configureNavigatorController() {
+        self.navigationItem.title = "apod"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.backgroundColor = #colorLiteral(red: 0.09019607843, green: 0.05098039216, blue: 0.1490196078, alpha: 1)
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.navigationBar.barStyle = .black
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
     }
     
     // MARK: - Setup AddSub
     
-    func sutupAddSubview() {
-        view.addSubview(scrollView)
+    private func sutupAddSubview() {
         scrollView.addSubview(stackView)
+        view.addSubview(scrollView)
     }
     
     
     // MARK: - Setup Size Constraint
     
-    func setupSizeUIConstraint() {
+    private func setupSizeUIConstraint() {
         NSLayoutConstraint.activate([
-            ApodViewController.apodImgVw.heightAnchor.constraint(equalToConstant: 400),
-            ApodViewController.apodImgVw.widthAnchor.constraint(equalTo: view.widthAnchor),
-            
-            ApodViewController.descriptionTxtVw.heightAnchor.constraint(equalToConstant: 300),
-            ApodViewController.descriptionTxtVw.widthAnchor.constraint(equalTo: view.widthAnchor)
+            apodImgVw.heightAnchor.constraint(equalToConstant: 400),
+            apodImgVw.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            descriptionTxtVw.widthAnchor.constraint(equalTo: stackView.widthAnchor)
         ])
     }
     
     // MARK: - Setup Constraint scrollView, stackView
     
-    func setupStackViewConstraint() {
+    private func setupStackViewConstraint() {
         let contentLayoutGuide = scrollView.contentLayoutGuide
-        
         NSLayoutConstraint.activate([
-            stackView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            stackView.leadingAnchor.constraint(equalTo: contentLayoutGuide.leadingAnchor),
-            stackView.trailingAnchor.constraint(equalTo: contentLayoutGuide.trailingAnchor),
-            stackView.topAnchor.constraint(equalTo: contentLayoutGuide.topAnchor),
-            stackView.bottomAnchor.constraint(equalTo: contentLayoutGuide.bottomAnchor)
+            stackView.leadingAnchor.constraint(equalTo: contentLayoutGuide.leadingAnchor, constant: 5),
+            stackView.trailingAnchor.constraint(equalTo: contentLayoutGuide.trailingAnchor, constant: -5),
+            stackView.topAnchor.constraint(equalTo: contentLayoutGuide.topAnchor, constant: 5),
+            stackView.bottomAnchor.constraint(equalTo: contentLayoutGuide.bottomAnchor, constant: -5),
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
-    func setupScrollViewConstraint() {
+    private func setupScrollViewConstraint() {
         let frameLayoutGuide = scrollView.frameLayoutGuide
-        
         NSLayoutConstraint.activate([
             frameLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             frameLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -134,10 +155,7 @@ class ApodViewController: UIViewController {
             frameLayoutGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    
-    
-    
-    
+      
 }
 
 
