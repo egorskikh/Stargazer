@@ -63,7 +63,10 @@ class ApodVC: UIViewController {
         label.textColor = .white
         label.attributedText =
             NSMutableAttributedString()
-            .orangeHighlight("Astronomy Picture of the Day")
+            .bold("Astronomy Picture of the Day")
+        label.backgroundColor = .orange
+        label.clipsToBounds = true
+        label.layer.cornerRadius = 5
         return label
     }()
     
@@ -179,6 +182,7 @@ class ApodVC: UIViewController {
     
     private func setupSizeUIConstraint() {
         NSLayoutConstraint.activate([
+            titleLbl.widthAnchor.constraint(equalTo: stackView.widthAnchor),
             apodImgVw.heightAnchor.constraint(equalToConstant: 400),
             apodImgVw.widthAnchor.constraint(equalTo: stackView.widthAnchor),
             descriptionTxtVw.widthAnchor.constraint(equalTo: stackView.widthAnchor)
