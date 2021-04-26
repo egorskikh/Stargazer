@@ -7,7 +7,10 @@
 
 import Foundation
 
-class ApodPresenter {
+class ApodPresenter: ApodPresenterProtocol  {
+    
+    weak var view: ApodViewProtocol?
+    var router: ApodRouterWireframeProtocol!
     
 
 }

@@ -7,10 +7,16 @@
 
 import Foundation
 
-class ApodRouter {
-    
-}
+//class ApodRouter: ApodRouterWireframeProtocol {
+//
+//    static func assembleModule() -> ApodVC {
+//
+//        let view = ApodVC()
+//        let presenter = ApodPresenter()
+//        presenter.view = view
+////        return view
+//    }
+//
+//
+//}
 
-extension ApodRouter {
-    
-}

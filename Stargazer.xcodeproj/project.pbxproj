@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7B292B89262676200096D0A3 /* ApodContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B292B88262676200096D0A3 /* ApodContract.swift */; };
 		7B834B4826329900005BBF8C /* NSMutableAttributedStringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B834B4726329900005BBF8C /* NSMutableAttributedStringExt.swift */; };
+		7BAB86EC2637009900BA1EEE /* ApodPromoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB86EB2637009900BA1EEE /* ApodPromoCell.swift */; };
+		7BAB86F02637035100BA1EEE /* PromoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAB86EF2637035100BA1EEE /* PromoData.swift */; };
 		7BAD88C62624582600F900CD /* TabBarTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88C52624582600F900CD /* TabBarTitle.swift */; };
 		7BAD88CA2624598500F900CD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88C92624598500F900CD /* TabBarController.swift */; };
 		7BAD88CE262459FB00F900CD /* NeoWsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88CD262459FB00F900CD /* NeoWsVC.swift */; };
@@ -16,7 +18,7 @@
 		7BAD88D426245A6F00F900CD /* InSightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88D326245A6F00F900CD /* InSightVC.swift */; };
 		7BAD88DF26246B8900F900CD /* ApodPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88DE26246B8900F900CD /* ApodPresenter.swift */; };
 		7BAD88E226246BD700F900CD /* ApodInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88E126246BD700F900CD /* ApodInteractor.swift */; };
-		7BAD88E526246C0500F900CD /* ApodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88E426246C0500F900CD /* ApodEntity.swift */; };
+		7BAD88E526246C0500F900CD /* APOD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88E426246C0500F900CD /* APOD.swift */; };
 		7BAD88EC26246D9600F900CD /* ApodNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAD88EB26246D9600F900CD /* ApodNetworkService.swift */; };
 		7BC769002625B1FC0072B402 /* ApodRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC768FF2625B1FC0072B402 /* ApodRouter.swift */; };
 		7BC769042625BCB10072B402 /* ApodDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC769032625BCB10072B402 /* ApodDataFetch.swift */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		7B292B88262676200096D0A3 /* ApodContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodContract.swift; sourceTree = "<group>"; };
 		7B834B4726329900005BBF8C /* NSMutableAttributedStringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedStringExt.swift; sourceTree = "<group>"; };
+		7BAB86EB2637009900BA1EEE /* ApodPromoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodPromoCell.swift; sourceTree = "<group>"; };
+		7BAB86EF2637035100BA1EEE /* PromoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoData.swift; sourceTree = "<group>"; };
 		7BAD88C52624582600F900CD /* TabBarTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarTitle.swift; sourceTree = "<group>"; };
 		7BAD88C92624598500F900CD /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7BAD88CD262459FB00F900CD /* NeoWsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeoWsVC.swift; sourceTree = "<group>"; };
@@ -39,7 +43,7 @@
 		7BAD88D326245A6F00F900CD /* InSightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InSightVC.swift; sourceTree = "<group>"; };
 		7BAD88DE26246B8900F900CD /* ApodPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodPresenter.swift; sourceTree = "<group>"; };
 		7BAD88E126246BD700F900CD /* ApodInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodInteractor.swift; sourceTree = "<group>"; };
-		7BAD88E426246C0500F900CD /* ApodEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodEntity.swift; sourceTree = "<group>"; };
+		7BAD88E426246C0500F900CD /* APOD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APOD.swift; sourceTree = "<group>"; };
 		7BAD88EB26246D9600F900CD /* ApodNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodNetworkService.swift; sourceTree = "<group>"; };
 		7BC768FF2625B1FC0072B402 /* ApodRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodRouter.swift; sourceTree = "<group>"; };
 		7BC769032625BCB10072B402 /* ApodDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApodDataFetch.swift; sourceTree = "<group>"; };
@@ -80,6 +84,24 @@
 				7B834B4726329900005BBF8C /* NSMutableAttributedStringExt.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		7B834B4F2632A75F005BBF8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7BAD88E426246C0500F900CD /* APOD.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B919B062636FBD5005C164D /* ApodView */ = {
+			isa = PBXGroup;
+			children = (
+				7BAB86EF2637035100BA1EEE /* PromoData.swift */,
+				7BAB86EB2637009900BA1EEE /* ApodPromoCell.swift */,
+				7BD70C0F2623852E00CD8AF3 /* ApodVC.swift */,
+			);
+			path = ApodView;
 			sourceTree = "<group>";
 		};
 		7BAD88BD2624565300F900CD /* App */ = {
@@ -149,12 +171,12 @@
 		7BAD88D626245F3000F900CD /* APODModule */ = {
 			isa = PBXGroup;
 			children = (
+				7B834B4F2632A75F005BBF8C /* Model */,
 				7B292B85262675D50096D0A3 /* Network */,
 				7B292B88262676200096D0A3 /* ApodContract.swift */,
-				7BD70C0F2623852E00CD8AF3 /* ApodVC.swift */,
+				7B919B062636FBD5005C164D /* ApodView */,
 				7BAD88DE26246B8900F900CD /* ApodPresenter.swift */,
 				7BAD88E126246BD700F900CD /* ApodInteractor.swift */,
-				7BAD88E426246C0500F900CD /* ApodEntity.swift */,
 				7BC768FF2625B1FC0072B402 /* ApodRouter.swift */,
 			);
 			path = APODModule;
@@ -283,13 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BAD88E526246C0500F900CD /* ApodEntity.swift in Sources */,
+				7BAD88E526246C0500F900CD /* APOD.swift in Sources */,
 				7BAD88D426245A6F00F900CD /* InSightVC.swift in Sources */,
 				7BAD88CE262459FB00F900CD /* NeoWsVC.swift in Sources */,
 				7B292B89262676200096D0A3 /* ApodContract.swift in Sources */,
 				7BAD88EC26246D9600F900CD /* ApodNetworkService.swift in Sources */,
 				7BC769002625B1FC0072B402 /* ApodRouter.swift in Sources */,
 				7BAD88DF26246B8900F900CD /* ApodPresenter.swift in Sources */,
+				7BAB86F02637035100BA1EEE /* PromoData.swift in Sources */,
 				7BAD88D126245A4700F900CD /* MarsRoverPhotosVC.swift in Sources */,
 				7BD70C102623852E00CD8AF3 /* ApodVC.swift in Sources */,
 				7BC769042625BCB10072B402 /* ApodDataFetch.swift in Sources */,
@@ -300,6 +323,7 @@
 				7BD70C0C2623852E00CD8AF3 /* AppDelegate.swift in Sources */,
 				7BD70C0E2623852E00CD8AF3 /* SceneDelegate.swift in Sources */,
 				7BAD88E226246BD700F900CD /* ApodInteractor.swift in Sources */,
+				7BAB86EC2637009900BA1EEE /* ApodPromoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ApodVC.swift
 //  Stargazer
 //
 //  Created by Егор Горских on 11.04.2021.
@@ -8,6 +8,17 @@
 import UIKit
 
 class ApodVC: UIViewController {
+    
+    // MARK: - TODO! Move from here later
+    let promoImageData = [ PromoData(backroundImage: #imageLiteral(resourceName: "nasa1")),
+                           PromoData(backroundImage: #imageLiteral(resourceName: "nasa4")),
+                           PromoData(backroundImage: #imageLiteral(resourceName: "nasa3")),
+                           PromoData(backroundImage: #imageLiteral(resourceName: "nasa6")),
+                           PromoData(backroundImage: #imageLiteral(resourceName: "nasa5")),
+                           PromoData(backroundImage: #imageLiteral(resourceName: "nasa2")),
+                           PromoData(backroundImage: #imageLiteral(resourceName: "nasa7")),
+                           PromoData(backroundImage: #imageLiteral(resourceName: "nasa8"))]
+    
     
     // MARK: - Properties
     
@@ -19,7 +30,9 @@ class ApodVC: UIViewController {
     }()
     
     lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLbl,
+        let stackView = UIStackView(arrangedSubviews: [promoCollectionView,
+                                                       titleTabLbl,
+                                                       titleLbl,
                                                        dataLbl,
                                                        copyrightLbl,
                                                        apodImgVw,
@@ -31,6 +44,29 @@ class ApodVC: UIViewController {
         return stackView
     }()
     
+    lazy var promoCollectionView: UICollectionView = {
+        let layot = UICollectionViewFlowLayout()
+        layot.scrollDirection = .horizontal
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layot)
+        collectionView.register(ApodPromoCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = #colorLiteral(red: 0.09019607843, green: 0.05098039216, blue: 0.1490196078, alpha: 1)
+        collectionView.showsHorizontalScrollIndicator = false
+        return collectionView
+    }()
+    
+    lazy var titleTabLbl: UILabel = {
+        var label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.textColor = .white
+        label.attributedText =
+            NSMutableAttributedString()
+            .orangeHighlight("Astronomy Picture of the Day")
+        return label
+    }()
+    
     lazy var titleLbl: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -39,7 +75,7 @@ class ApodVC: UIViewController {
         label.textColor = .white
         label.attributedText =
             NSMutableAttributedString()
-                .bold("Hello, an ordinary guy from the outskirts of Moscow.")
+            .bold("Hello, an ordinary guy from the outskirts of Moscow.")
         return label
     }()
     
@@ -50,7 +86,7 @@ class ApodVC: UIViewController {
         label.textColor = .white
         label.attributedText =
             NSMutableAttributedString()
-                .bold("13.04.21")
+            .bold("dd.mm.21")
         return label
     }()
     
@@ -60,7 +96,7 @@ class ApodVC: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.attributedText =
             NSMutableAttributedString()
-                .underlined("Copyright: Egor Gorskikh")
+            .underlined("Copyright: Egor Gorskikh")
         label.textColor = .white
         return label
     }()
@@ -102,9 +138,19 @@ class ApodVC: UIViewController {
         setupScrollViewConstraint()
         setupStackViewConstraint()
         setupSizeUIConstraint()
+        setupHeightСollectionViews()
+        configureDataSoureceAndDelegateProtocols()
     }
     
-    // MARK: - Setup View Element
+    // MARK: - Conform to The CollectionView Data Source and Delegate Protocols
+    
+    private func configureDataSoureceAndDelegateProtocols() {
+        promoCollectionView.delegate = self
+        promoCollectionView.dataSource = self
+        
+    }
+    
+    // MARK: - Setup View
     
     private func setupView() {
         self.view.backgroundColor = #colorLiteral(red: 0.09019607843, green: 0.05098039216, blue: 0.1490196078, alpha: 1)
@@ -139,29 +185,57 @@ class ApodVC: UIViewController {
         ])
     }
     
-    // MARK: - Setup Constraint scrollView, stackView
+    // MARK: - Setup Constraint scrollView, stackView, promoCollectionView
     
-    private func setupStackViewConstraint() {
-        let contentLayoutGuide = scrollView.contentLayoutGuide
+    private func setupHeightСollectionViews() {
         NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: contentLayoutGuide.leadingAnchor, constant: 5),
-            stackView.trailingAnchor.constraint(equalTo: contentLayoutGuide.trailingAnchor, constant: -5),
-            stackView.topAnchor.constraint(equalTo: contentLayoutGuide.topAnchor, constant: 5),
-            stackView.bottomAnchor.constraint(equalTo: contentLayoutGuide.bottomAnchor, constant: -5),
-            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
+                promoCollectionView.heightAnchor.constraint(equalToConstant: view.frame.width / 2)])
+        }
+    
+        private func setupStackViewConstraint() {
+            let contentLayoutGuide = scrollView.contentLayoutGuide
+            NSLayoutConstraint.activate([
+                stackView.leadingAnchor.constraint(equalTo: contentLayoutGuide.leadingAnchor, constant: 5),
+                stackView.trailingAnchor.constraint(equalTo: contentLayoutGuide.trailingAnchor, constant: -5),
+                stackView.topAnchor.constraint(equalTo: contentLayoutGuide.topAnchor, constant: 5),
+                stackView.bottomAnchor.constraint(equalTo: contentLayoutGuide.bottomAnchor, constant: -5),
+                stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            ])
+        }
+        
+        private func setupScrollViewConstraint() {
+            let frameLayoutGuide = scrollView.frameLayoutGuide
+            NSLayoutConstraint.activate([
+                frameLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                frameLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                frameLayoutGuide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+                frameLayoutGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            ])
+        }
+        
     }
     
-    private func setupScrollViewConstraint() {
-        let frameLayoutGuide = scrollView.frameLayoutGuide
-        NSLayoutConstraint.activate([
-            frameLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            frameLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            frameLayoutGuide.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            frameLayoutGuide.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
+    // MARK: - UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
+    
+    extension ApodVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+        
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: (collectionView.frame.width / 2.5),
+                          height: (collectionView.frame.width / 2))
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return promoImageData.count
+        }
+        
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            guard
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? ApodPromoCell
+            else {
+                return UICollectionViewCell()
+            }
+            cell.data = self.promoImageData[indexPath.item]
+            return cell
+        }
+        
     }
-      
-}
-
-

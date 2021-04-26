@@ -7,29 +7,26 @@
 
 import UIKit
 
-// View -> Presenter
-protocol ApodViewProtocol {
-    var presenter: ApodPresenterProtocol { get set }
+protocol ApodViewProtocol: class {
+  //  var presenter: ApodPresenterProtocol! { get set }
 }
 
 protocol ApodPresenterProtocol: class {
     var view: ApodViewProtocol? { get set }
-    var interactor: ApodInteractorProtocol? { get set }
-    var router: ApodRouterWireframeProtocol? { get set }
-    
+//    var interactor: ApodInteractorProtocol! { get set }
+ //   var router: ApodRouterWireframeProtocol! { get set }
 }
 
 protocol ApodInteractorProtocol {
     var output: ApodInteractorOutputProtocol? { get set }
-    
     func fetchApod()
 }
 
 protocol ApodInteractorOutputProtocol {
-    func apodFetched(_ apod: ApodEntity)
+    func apodFetched(_ apod: APOD)
 }
 
-// Presenter -> Router
+
 protocol ApodRouterWireframeProtocol {
-    static func assembleModule() -> UIViewController
+    static func assembleModule() -> ApodVC
 }
