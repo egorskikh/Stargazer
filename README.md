@@ -4,9 +4,10 @@ The Stargazer app was created to get closer to the stars with the help of NASA.
 
 ## Сontents in TabBar
 
-* 1:  Astronomy Picture of the Day
+* Astronomy Picture of the Day
 
-One of the most popular websites at NASA is the Astronomy Picture of the Day. In fact, this website is one of the most popular websites across all federal agencies. It has the popular appeal of a Justin Bieber video. This endpoint structures the APOD imagery and associated metadata so that it can be repurposed for other applications. In addition, if the concept_tags parameter is set to True, then keywords derived from the image explanation are returned. These keywords could be used as auto-generated hashtags for twitter or instagram feeds; but generally help with discoverability of relevant imagery.
+![apodGif](https://user-images.githubusercontent.com/60622982/116113062-d3117380-a6c0-11eb-8f86-ab8db57ac43f.gif)
+
 
 * 2: Near Earth Object Web Service
 
