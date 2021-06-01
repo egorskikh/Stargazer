@@ -19,16 +19,9 @@ final class TabBarController: UITabBarController {
     
     private func setupTabBar() {
         let apodVC = ApodVC()
-        let neoWsVC = NeoWsVC()
-        let marsRoverPhotosVC = MarsRoverPhotosVC()
-        let inSightVC = InSightVC()
         
         viewControllers = [
             TabBarController.generateNavigationController(rootVC: apodVC, title: TabBarTitle.apod.rawValue, systemImage: "moon.stars"),
-            TabBarController.generateNavigationController(rootVC: neoWsVC, title: TabBarTitle.neoWs.rawValue, systemImage: "arrow.up.heart.fill"),
-            TabBarController.generateNavigationController(rootVC: marsRoverPhotosVC, title: TabBarTitle.marsRoverPhotos.rawValue, systemImage: "arrow.up.heart.fill"),
-            TabBarController.generateNavigationController(rootVC: inSightVC, title: TabBarTitle.inSight.rawValue, systemImage: "arrow.up.heart.fill")
-            
         ]
     }
     
